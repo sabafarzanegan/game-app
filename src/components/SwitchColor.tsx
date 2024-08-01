@@ -5,7 +5,7 @@ function SwitchColor() {
   return (
     <Switch
       colorScheme="teal"
-      size="sm"
+      size="md"
       isChecked={colorMode === "dark"}
       onChange={toggleColorMode}
     />
