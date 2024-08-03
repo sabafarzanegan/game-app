@@ -1,27 +1,16 @@
-import { Grid, GridItem, Show } from "@chakra-ui/react";
-import Navbar from "./components/Navbar";
-import GameGrid from "./components/GameGrid";
+import { Route, Routes } from "react-router-dom";
+import Home from "./page/Home";
+import { AppProvider } from "./context/Themeprovider";
 
 function App() {
   return (
-    <Grid
-      templateAreas={{
-        base: `"header main"`,
-        lg: `"header header"  " asid main"`,
-      }}>
-      <GridItem area={"header"}>
-        <Navbar />
-      </GridItem>
-      <Show above="lg">
-        <GridItem bg="pink.300" area={"asid"}>
-          asid
-        </GridItem>
-      </Show>
-
-      <GridItem area={"main"}>
-        <GameGrid />
-      </GridItem>
-    </Grid>
+    <>
+      <AppProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </AppProvider>
+    </>
   );
 }
 

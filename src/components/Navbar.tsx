@@ -1,24 +1,26 @@
-import { HStack, Text } from "@chakra-ui/react";
-import { SiRockstargames } from "react-icons/si";
-import SwitchColor from "./SwitchColor";
-function Navbar() {
-  return (
-    <HStack
-      p={2}
-      spacing={2}
-      justifyContent="space-between"
-      alignItems="center">
-      <HStack justifyContent="center" alignItems="center" gap="10px">
-        <Text fontSize="2xl">
-          <SiRockstargames />
-        </Text>
-        <Text as="em" fontSize="xl">
-          Game Center
-        </Text>
-      </HStack>
+import { useTheme } from "../context/Themeprovider";
 
-      <SwitchColor />
-    </HStack>
+function Navbar() {
+  const { theme, setTheme } = useTheme();
+  console.log(theme);
+
+  const changeTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+  return (
+    <main className="flex items-center justify-between py-4 dark:text-white">
+      <h1 className="font-lale font-bold text-xl">RAWG</h1>
+      <form action="">
+        <input
+          type="text"
+          placeholder="search games"
+          className="w-[200px] md:w-[400px] lg:w-[500px] px-2 py-[5px] rounded-2xl outline-none border border-gray-300 font-vazir "
+        />
+      </form>
+      <div>
+        <button onClick={changeTheme}>switch theme</button>
+      </div>
+    </main>
   );
 }
 

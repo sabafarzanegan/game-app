@@ -1,17 +1,18 @@
-import { Card, CardBody, CardHeader, Heading, Image } from "@chakra-ui/react";
-import { Game } from "../hooks/useGames";
-interface props {
-  game: Game;
-}
-
-function CardGame({ game }: props) {
+function CardGame() {
   return (
-    <Card borderRadius={10} overflow="hidden" shadow="md">
-      <Image boxSize="450px" objectFit="cover" src={game.background_image} />
-      <CardBody>
-        <Heading fontSize="lg">{game.name}</Heading>
-      </CardBody>
-    </Card>
+    <>
+      <div className="">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFdsbnHrrpjo0USPwLDAYUNmBH_QvHh4NqXTm0s6J35gPIRtMj"
+          alt=""
+          className="w-56 h-56"
+        />
+
+        <div>
+          <h3>Songs of Conquest</h3>
+        </div>
+      </div>
+    </>
   );
 }
 
